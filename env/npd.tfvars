@@ -1,1 +1,1 @@
-#environment = "npd"
+environment = "npd"
