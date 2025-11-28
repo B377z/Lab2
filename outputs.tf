@@ -1,19 +1,29 @@
-output "rg_name" {
-  value = azurerm_resource_group.main.name
+output "environment" {
+  description = "The environment for the deployment"
+  value       = var.environment
 }
 
 output "location" {
-  value = azurerm_resource_group.main.location
+  description = "The Azure region where the resource group is deployed"
+  value       = azurerm_resource_group.main.location
 }
 
-output "rg_id" {
-  value = azurerm_resource_group.main.id
+output "name_prefix" {
+  description = "The prefix used for naming resources"
+  value       = local.name_prefix
 }
 
 output "project_name" {
-  value = var.project_name
+  description = "The name of the project"
+  value       = var.project_name
 }
 
-output "environment" {
-  value = var.environment
+output "rg_id" {
+  description = "The ID of the main Azure Resource Group"
+  value       = azurerm_resource_group.main.id
+}
+
+output "rg_name" {
+  description = "The name of the main Azure Resource Group"
+  value       = azurerm_resource_group.main.name
 }
