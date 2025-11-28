@@ -1,1 +1,1 @@
-#environment_name = "prd"
+environment = "prd"
