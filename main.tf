@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "main" {
-  name     = "terraform-state-rg"
+  name     = "${var.project_name}-${var.environment}-rg"
   location = var.location
 }

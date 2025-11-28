@@ -1,2 +1,2 @@
-#application_name = "terraform-state"
+project_name = "terraform-state"
 #primary_location = "canadacentral"
