@@ -1,11 +1,23 @@
 variable "environment" {
-  description = "Deployment environment (e.g., npd, prd)"
   type        = string
+  description = "Deployment environment"
 
   validation {
-    condition     = contains(["dev", "tst", "prd", "npd"], var.environment)
-    error_message = "value must be one of: dev, tst, prd, npd"
+    condition = contains(
+      [
+        "dev", "tst",
+        "npd", "nonprod", "non-prod", "nonproduction",
+        "prd", "prod", "production"
+      ],
+      lower(trimspace(var.environment))
+    )
+    error_message = "Environment must be one of: dev, tst, npd, nonprod, non-prod, nonproduction, prd, prod, production."
   }
+  validation {
+    condition     = length(trimspace(var.environment)) > 0
+    error_message = "Environment cannot be empty."
+  }
+
 }
 
 variable "location" {

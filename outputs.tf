@@ -27,3 +27,7 @@ output "rg_name" {
   description = "The name of the main Azure Resource Group"
   value       = azurerm_resource_group.main.name
 }
+
+output "environment_canonical" {
+  value = local.env_standard_suffix
+}
