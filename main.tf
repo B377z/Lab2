@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "main" {
   name     = "terraform-state-rg"
-  location = "canadacentral"
+  location = var.location
 }
