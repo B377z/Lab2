@@ -1,7 +1,4 @@
-/*variable "application_name" {
-  type = string
+variable "location" {
+  type    = string
+  default = "canadacentral"
 }
-
-variable "primary_location" {
-  type = string
-}*/
